@@ -6,18 +6,18 @@ pipeline{
 
         stage('Cloning from GitHub') {
                 steps {
-                    git branch: 'main', url: 'https://github.com/KlaiGhassen/deVopsSpring'
+                    git branch: 'main', url: 'https://github.com/malek-bzg/Devops.git'
                 }
                 
             }
       
-      stage('Clean maven'){
+      stage('Clean'){
             steps {
                 sh 'mvn clean '
             }
             
         }
-        stage('Compile project'){
+        stage('Compile'){
             steps {
                 sh 'mvn compile  -DskipTests'
             }
@@ -33,7 +33,7 @@ pipeline{
 
          stage('SonarQube Analysis'){
                 steps {
-                    sh """mvn sonar:hinda2100@@ -DskipTests \
+                    sh """mvn sonar:sonar -DskipTests \
                             -Dsonar.language=java \
                           
                             
