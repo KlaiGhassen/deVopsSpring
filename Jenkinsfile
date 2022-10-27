@@ -11,13 +11,13 @@ pipeline{
                 
             }
       
-      stage('Clean'){
+      stage('Clean maven'){
             steps {
                 sh 'mvn clean '
             }
             
         }
-        stage('Compile'){
+        stage('Compile project'){
             steps {
                 sh 'mvn compile  -DskipTests'
             }
